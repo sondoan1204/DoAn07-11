@@ -1,0 +1,113 @@
+﻿@model IEnumerable<DoAn07_11.Models.BANGGIADAT>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_QUANHUYEN)
+        </th>
+        <th>
+            Tên Đường
+        </th>
+        <th>
+            Đoạn từ
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VT1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VT2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VT3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VT4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VT5)
+        </th>
+        <th>
+            Loại hình
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.NGAYTAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGAYSUA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGUOITAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGUOISUA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TRANGTHAI)
+            </th>*@
+        <th>
+            Chi tiết loại
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_QUANHUYEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENDUONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOANTU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_LOAIHINH)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.NGAYTAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NGAYSUA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NGUOITAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NGUOISUA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TRANGTHAI)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_CHITIETLOAI)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_BANGGIADAT }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_BANGGIADAT }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_BANGGIADAT })
+            </td>
+        </tr>
+    }
+
+</table>

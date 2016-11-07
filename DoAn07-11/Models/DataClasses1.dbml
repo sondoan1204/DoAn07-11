@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DoAn07-11" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SONPC;Initial Catalog=DoAn07-11;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DoAn07_11ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BANGGIADAT" Member="BANGGIADATs">
+    <Type Name="BANGGIADAT">
+      <Column Name="ID_BANGGIADAT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_QUANHUYEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENDUONG" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DOANTU" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VT1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VT2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VT3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VT4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VT5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_LOAIHINH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGUOITAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGUOISUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_CHITIETLOAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="QUANHUYEN_BANGGIADAT" Member="QUANHUYEN" ThisKey="ID_QUANHUYEN" OtherKey="ID_QUANHUYEN" Type="QUANHUYEN" IsForeignKey="true" />
+      <Association Name="LOAIHINH_BANGGIADAT" Member="LOAIHINH" ThisKey="ID_LOAIHINH" OtherKey="ID_LOAIHINH" Type="LOAIHINH" IsForeignKey="true" />
+      <Association Name="CHITIETLOAI_BANGGIADAT" Member="CHITIETLOAI" ThisKey="ID_CHITIETLOAI" OtherKey="ID_CHITIETLOAI" Type="CHITIETLOAI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINHTHANH" Member="TINHTHANHs">
+    <Type Name="TINHTHANH">
+      <Column Name="ID_TINHTHANH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGUOITAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGUOISUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TINHTHANH_QUANHUYEN" Member="QUANHUYENs" ThisKey="ID_TINHTHANH" OtherKey="ID_TINHTHANH" Type="QUANHUYEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUANHUYEN" Member="QUANHUYENs">
+    <Type Name="QUANHUYEN">
+      <Column Name="ID_QUANHUYEN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TINHTHANH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGUOITAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGUOISUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="QUANHUYEN_BANGGIADAT" Member="BANGGIADATs" ThisKey="ID_QUANHUYEN" OtherKey="ID_QUANHUYEN" Type="BANGGIADAT" />
+      <Association Name="TINHTHANH_QUANHUYEN" Member="TINHTHANH" ThisKey="ID_TINHTHANH" OtherKey="ID_TINHTHANH" Type="TINHTHANH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIHINH" Member="LOAIHINHs">
+    <Type Name="LOAIHINH">
+      <Column Name="ID_LOAIHINH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGUOITAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGUOISUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LOAIHINH_BANGGIADAT" Member="BANGGIADATs" ThisKey="ID_LOAIHINH" OtherKey="ID_LOAIHINH" Type="BANGGIADAT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETLOAI" Member="CHITIETLOAIs">
+    <Type Name="CHITIETLOAI">
+      <Column Name="ID_CHITIETLOAI" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGUOITAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGUOISUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_LOAITAISAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CHITIETLOAI_BANGGIADAT" Member="BANGGIADATs" ThisKey="ID_CHITIETLOAI" OtherKey="ID_CHITIETLOAI" Type="BANGGIADAT" />
+    </Type>
+  </Table>
+</Database>

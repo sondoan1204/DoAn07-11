@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.375" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="c4ef52f4-6e8d-4fa9-bbd9-1325feb1be37" absoluteBounds="4.25, 1.125, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/BANGGIADAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63cbd77a-b91b-4be9-9c23-4b5d3b148c3a" absoluteBounds="4.265, 1.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ec4e41c-0a93-4d4d-9aa1-9566a60fc88f" absoluteBounds="1.75, 7, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/TINHTHANH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75ff360c-bc2f-4845-8e24-d8a570ad2efe" absoluteBounds="1.7650000000000001, 7.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a452b4a-c677-4831-9d71-a749694172e5" absoluteBounds="1.5, 1.875, 2, 2.347801106770834">
+      <DataClassMoniker Name="/DataClasses1DataContext/QUANHUYEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8cdc8ad-b839-4de9-b964-4a99cc7284a1" absoluteBounds="1.5150000000000001, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 3.04890055338542); (4.25 : 3.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/QUANHUYEN/QUANHUYEN_BANGGIADAT" />
+      <nodes>
+        <classShapeMoniker Id="5a452b4a-c677-4831-9d71-a749694172e5" />
+        <classShapeMoniker Id="c4ef52f4-6e8d-4fa9-bbd9-1325feb1be37" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 7); (2.625 : 4.22280110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/TINHTHANH/TINHTHANH_QUANHUYEN" />
+      <nodes>
+        <classShapeMoniker Id="4ec4e41c-0a93-4d4d-9aa1-9566a60fc88f" />
+        <classShapeMoniker Id="5a452b4a-c677-4831-9d71-a749694172e5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a79c4690-6c9c-4db4-9a39-c207e1de97ab" absoluteBounds="8.125, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/LOAIHINH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d419629-73d5-4164-9e15-c38efbb0c526" absoluteBounds="8.14, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 4.75560628255208); (6.25 : 4.75560628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/LOAIHINH/LOAIHINH_BANGGIADAT" />
+      <nodes>
+        <classShapeMoniker Id="a79c4690-6c9c-4db4-9a39-c207e1de97ab" />
+        <classShapeMoniker Id="c4ef52f4-6e8d-4fa9-bbd9-1325feb1be37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="850a3405-d2e6-4e25-8ea2-4efb7850d48e" absoluteBounds="8, 1.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClasses1DataContext/CHITIETLOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0bf22e41-02ea-499f-8785-acd1bb0c1390" absoluteBounds="8.015, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 3.04890055338542); (6.25 : 3.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/CHITIETLOAI/CHITIETLOAI_BANGGIADAT" />
+      <nodes>
+        <classShapeMoniker Id="850a3405-d2e6-4e25-8ea2-4efb7850d48e" />
+        <classShapeMoniker Id="c4ef52f4-6e8d-4fa9-bbd9-1325feb1be37" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
